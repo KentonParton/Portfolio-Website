@@ -1,0 +1,35 @@
+<p>Dear {{ order.client }},</p>
+
+<p>Your order has been dispatched and will arrive at your address shortly.</p>
+
+<p>The contents of the order are:</p>
+
+<table>
+	<thead>
+		<tr>
+            <th style="padding-right: 20px;">Description</th>
+            <th style="padding-right: 20px;">Product Name</th>
+            <th style="padding-right: 20px;">Volume</th>
+            <th style="padding-right: 20px;">Product Code</th>
+            <th style="padding-right: 20px;">Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for product in products %}
+    	<tr>
+            <td style="padding-right: 20px;">{{ product.product_description }}</td>
+            <td style="padding-right: 20px;">{{ product.product_name }}</td>
+            <td style="padding-right: 20px;">{{ product.product_volume }}</td>
+    		<td style="padding-right: 20px;">{{ product.product_code }}</td>
+    		<td style="padding-right: 20px;">{{ product.quantity }}</td>
+    	</tr>
+    	{% endfor %}
+    </tbody>
+</table>
+
+<p>The total cost of your order is: {{ order.total_price }}</p>
+
+<p>Please remember to have your unique client pin on hand when you collect your order. Your pin, incase you have forgotten, is: <strong>{{ client.unique_pin }}</strong></p>
+
+<p>Thank you for choosing Importers!</p>
+

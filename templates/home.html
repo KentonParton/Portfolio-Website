@@ -1,0 +1,29 @@
+{% extends "importers.html" %}
+
+{% block content %}
+
+<div class="homeBody">
+	<div class="homeHeader">
+		<div class="logoHeader"></div>
+		<div class="rightPanel">
+
+			<h3 class="homeUsername">{{ user.username }}</h3>
+
+			{% autoescape off %}
+			{{ displayAdmin }}
+			{% endautoescape %}
+
+			<div class="homeBtnCont">
+				<a class="logout" title="Logout" href="{% url 'logout' %}"></a>
+			</div>
+		</div>
+	</div>
+		<div class="home">
+			<div class="blockCont" align="center">
+				<a href="{% url 'orders' %}">Order Queue</a>
+				<a href="../admin/">Administration</a>
+				<a href="{% url 'driver' %}">Driver Map</a>
+			</div>
+		</div>
+</div>
+{% endblock content %}

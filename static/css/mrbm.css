@@ -1,0 +1,145 @@
+/*
+  =========================================================================================================================================================================================================
+  General Styles
+  Author: Kenton
+  =========================================================================================================================================================================================================
+*/
+
+/*
+  =========================================================================================================================================================================================================
+  General Page Layout
+  =========================================================================================================================================================================================================
+*/
+html { height: 100%; }
+body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; background-attachment: fixed; font-family: Helvetica; font-weight: lighter; }
+
+/*
+  =========================================================================================================================================================================================================
+    Left Section
+  =========================================================================================================================================================================================================
+*/
+
+.leftSect { float: left; position: relative; width: 256px; height: 100%; background: #dfe3ee; }
+.leftSect .logoSect { background: rgba(0, 0, 0, 0) url("../images/mrbm/logo.png") no-repeat scroll left top / 224px auto; float: left; height: 66px; margin: 15px; position: relative; width: 224px; }
+
+/* Computation Section */
+.leftSect .compuSect { float: left; position: relative; width: 100%; height: calc(100% - 96px); background: #8b9dc3; }
+.leftSect .compuSect .header { float: left; position: relative; width: 100%; height: auto; }
+.leftSect .compuSect .header h1 { font-size: 16px; text-align: center; text-transform: uppercase; width: 100%; font-weight: initial; }
+
+.leftSect .compuSect .inputCont { float: left; position: relative; width: 100%; height: auto; }
+.leftSect .compuSect .inputCont h4 { float: left; position: relative; width: 100%; font-size: 12px; font-weight: initial; text-indent: 20px; margin: 0; padding: 0; margin-top: 5px; }
+.leftSect .compuSect .inputCont h6 { float: left; position: relative; width: auto; height: 40px; margin: 0 6px; line-height: 40px;  font-size: 10px; font-weight: lighter; }
+.leftSect .compuSect .inputCont input { float: left; margin: 10px 20px; position: relative; width: calc(100% - 40px); height: 25px; border-radius: 3px; border: none; text-indent: 10px; }
+
+.inputCont .windowSizeCont {float: left; position: relative; width: calc(100% - 20px); height: 100%; margin-left: 20px; }
+.inputCont .windowSizeCont .windowSizes { float: left; position: relative; width: calc(100% / 3); height: auto;  }
+.inputCont .windowSizeCont .windowSizes .checkbox { float: left; position: relative; width: auto; height: 40px; }
+
+.leftSect .compuSect .inputCont select { float: left; position: relative; margin: 10px 20px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; width: calc(100% - 40px); height: 25px; border: none; text-indent: 5px; }
+.leftSect .compuSect .inputCont .windowSizes input { width: 20px; height: 20px; margin: 9px 0px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+
+.compuSect .windowCont { float: left; position: relative; width: 100%; height: auto;}
+
+
+
+
+.leftSect .compuSect .buttonCont { float: left; height: auto; margin: 5px 20px; position: relative; width: calc(100% - 40px); }
+.leftSect .compuSect .buttonCont .button { background: #B52512; color: #FFFFFF; float: right; height: auto; padding: 15px 25px; position: relative; width: auto; cursor: pointer; }
+.leftSect .compuSect .buttonCont .button span {  font-size: 15px; text-transform: uppercase; }
+.leftSect .compuSect .buttonCont .button:hover { background: #FF8E7F; color: #FFFFFF; }
+
+/*
+  =========================================================================================================================================================================================================
+    Playground Section
+  =========================================================================================================================================================================================================
+*/
+
+/* ZOOM  Section */
+.playground { background: white none no-repeat fixed 0 0; float: left; height: 100%; overflow: hidden; width: calc(100% - 480px); }
+.playground .zoom { float: right; position: relative; width: 70px; height: 35px;  }
+.playground .zoom img { float: left; position: relative; width: 50%; height: auto; background: transparent; transition: background-color 0.5s ease;  }
+.playground .zoom img:hover { cursor: pointer; background-color: rgba(13,60,125, 0.5);   }
+
+
+/* Walls and Hover */
+.playground .mainBlock { display: inline-block; position: absolute !important; cursor: pointer; width: auto; height: 14px; z-index: 1}
+
+.playground .mainBlock .toolbar { float: left; position: absolute;  top: -40px; left: calc(50% - 90px); width: 180px; height: 26px;  }
+.playground .mainBlock .toolbar .controls { float: left; position: relative; width: 30px; height: 100%; background: #B3B3B3;}
+.playground .mainBlock .toolbar #control-1 { border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+.playground .mainBlock .toolbar #control-6 {  border-top-right-radius:8px; border-bottom-right-radius: 8px; background: #888888; }
+.playground .mainBlock .toolbar .controls .rotate { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto; z-index: 1; }
+.playground .mainBlock .toolbar .controls .delete { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto;  z-index: 1; }
+.playground .mainBlock .toolbar .controls .sort { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto;  z-index: 1; }
+.playground .mainBlock .toolbar .controls .drag { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto; z-index: 1; }
+.playground .mainBlock .toolbar .controls .switch { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto; z-index: 1; }
+.playground .mainBlock .toolbar .controls .flip { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto; z-index: 1; }
+.playground .mainBlock .arrow { float: left; position: absolute; top: -14px; left: calc(50% - 90px); width: 180px; height: 14px; }
+
+.playground .mainBlock:hover .toolbar,
+.playground .mainBlock .toolbar:hover { display: block; }
+
+.playground .mainBlock .dragBlock {  width: auto; height: auto; cursor: pointer; }
+.playground .mainBlock .dragBlock .wallCont { float: left; position: relative; width: auto; height: 14px; background: black; }
+.playground .mainBlock .dragBlock .wallRotate { float: left;  position: relative; width: 14px; height: auto; }
+
+/* Shutters Inside Walls */
+.shutterXl { float: left; position: relative; background: #35FF00; width: 60px; height: 12px; margin: 1px 1px 1px 0;   }
+.shutterL { float: left; position: relative; background: black; width: 40px; height: 12px; margin: 1px 1px 1px 0; }
+.shutterM { float: left; position: relative; background: #0017FF; width: 35px; height: 12px; margin: 1px 1px 1px 0; }
+.shutterS { float: left; position: relative; background: yellow; width: 30px; height: 12px; margin: 1px 1px 1px 0; }
+.shutterXs { float: left; position: relative; background: red; width: 25px; height: 12px; margin: 1px 1px 1px 0; }
+
+.shutterC { float: left; position: relative; width : 25px; height: 25px; margin: 1px 1px 1px 0; }
+.shutterC .cornerJunc { float: left; position: relative; width: 25px; height: 12px; background: purple; }
+.shutterC .cPieceJunc { position: absolute; width: 12.5px; height: 12px; bottom: 0; right: -1px; background: purple; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;  }
+.shutterC .cRotate { position: absolute; bottom: -1px; right: 25px; background: purple; border-top: 1px solid black; border-right: 0 solid black; border-bottom: 1px solid black; border-left: 1px solid black;  }
+.shutterC .cFlipped { bottom: 25px; border-top: 1px solid black; border-bottom: 0 solid black; }
+.shutterC .cCombo { bottom: -1px; right: 0; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 0px solid purple; }
+.shutterC .cSwitched { right: 11px; }
+.shutterC .cHorCombo { bottom: 25px;right: 11px; background: purple; border-right: 1px solid black; border-bottom: 0 solid black; border-left: 1px solid black; border-top: 1px solid black;}
+.shutterC .cRotSwitched { right: 25px; bottom: 11px; border-top: 1px solid black; border-right: 0 solid black; border-bottom: 1px solid black; border-left: 1px solid black; }
+
+.shutterC .cVertCombo { right: 0; bottom:11px; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 0px solid purple; }
+
+.shutterT { float: left; position: relative; width: 35px; height: 25px; margin: 1px 1px 1px 0; }
+.shutterT .tJunc { float: left; position: relative; width: 35px; height: 12px; background: #00B6E0;   }
+.shutterT .tPieceJunc { position: absolute; width: 12.5px; height: 12px; background: #00B6E0; bottom: 0; right: 11.25px; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;  }
+.shutterT .tRotate { position: absolute; background: #00B6E0; bottom:11.25px; right: 25px; border-top: 1px solid black; border-right: 0 solid black; border-bottom: 1px solid black; border-left: 1px solid black; }
+.shutterT .tFlipped { bottom: 25px; border-top: 1px solid black; border-bottom: 0 solid black; }
+.shutterT .tCombo { bottom: 11.25px; right: 0; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 0px solid #00B6E0; }
+
+.shutterD { float: left; position: relative; background: #8B4513; width: 90px; height: 12px; margin: 1px 1px 1px 0; }
+
+.windowXl { float: left; position: relative; background: #FF933A; width: 180px; height: 12px; margin: 1px 1px 1px 0; }
+.windowL { float: left; position: relative; background: #FF933A; width: 150px; height: 12px; margin: 1px 1px 1px 0;  }
+.windowM { float: left; position: relative; background: #FF933A; width: 120px; height: 12px; margin: 1px 1px 1px 0;  }
+.windowS { float: left; position: relative; background: #FF933A; width: 90px; height: 12px; margin: 1px 1px 1px 0;  }
+.windowXs { float: left; position: relative; background: #FF933A; width: 60px; height: 12px; margin: 1px 1px 1px 0;  }
+
+
+.playground .popup { float: left; position: absolute; left: 335px; top: 200px; height: 20px; width: 30%; padding: 4px; z-index: 1; display: none; }
+.playground .popup span { float: left; position: absolute; left: 0; top: 0; padding: 5px; background: #adc8ec; border: 1px solid #0d3c7d; }
+
+
+/*
+  =========================================================================================================================================================================================================
+    Right Section
+  =========================================================================================================================================================================================================
+*/
+
+.rightSect { float: right; height: 100%; position: relative; width: 224px; background: #8B9DC3;}
+.rightSect .key { float: left; position: relative; width: 100%;}
+.rightSect .key .keyCont:nth-child(2) { min-height: 84px;}
+/* .rightSect .key .shutterCont:nth-child(7){min-height: 30px;} */
+.rightSect .key .keyCont {float: left; position: relative; width: calc(100% - 20px); height: auto; background: #DFE3EE; border-radius: 3px; box-shadow: 0px 0px 4px 0px; margin: 10px 10px 0 10px; padding-bottom: 10px; }
+.rightSect .key h2 { float: left; position: relative; width: 100%; font-size: 16px; font-weight: bold; text-indent: 10px; margin: 7px 0 0 0; }
+.rightSect .key h4 { float: left; position: relative; width: 100%; font-size: 14px; font-weight: initial; margin: 0 10px 0 0; }
+
+.rightSect .key .shutterCont .keyOutline { float: left; position: relative; width: auto; height: 14px; background: black; padding-left: 1px; }
+
+.rightSect .key .shutterCont { float: left; margin: 10px 0 0 10px; max-height: 50px; position: relative; width: calc(100% - 20px); }
+.rightSect .key .shutterCont h3 { float: left; font-size: 14px; font-weight: initial; margin: 0 10px 0 0; position: relative; width: auto; }
+.rightSect .key .shutterCont .shutter { float: left; height: 20px; position: relative; width: 90px; }
+

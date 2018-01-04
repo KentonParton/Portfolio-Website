@@ -1,0 +1,19 @@
+Dear {{ order.client }},
+
+Your order has been dispatched, and will arrive at your address shortly.
+
+The contents of the order are:
+
+{% for product in products %}
+Description: {{ product.product_description }}
+Product Name: {{ product.product_name }}
+Volume: {{ product.product_volume }}
+Product Code: {{ product.product_code }}
+Quantity: {{ product.quantity }}
+{% endfor %}
+
+The total cost of your order is: {{ order.total_price }}
+
+Please remember to have your unique client pin on hand when you collect your order. Your pin, incase you have forgotten, is: {{ client.unique_pin }}
+
+Thank you for choosing Importers!

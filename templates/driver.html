@@ -1,0 +1,31 @@
+{% extends "importers.html" %}
+
+<style>
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+</style>
+
+{% block content %}
+<div id="map"></div>
+{% endblock content %}
+
+<script>
+    function initMap() {
+        var importers = {
+            lat: -33.926530,
+            lng: 18.616836,
+        };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: importers
+        });
+        var marker = new google.maps.Marker({
+            position: importers,
+            map: map
+            });
+        }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIS2054XqmVybfj_ACrPXPBMQW8X-5fQ&callback=initMap">
+</script>

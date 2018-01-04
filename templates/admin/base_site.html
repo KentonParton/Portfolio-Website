@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Administration | Importers Coffee Specialists{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Importers Coffee Specialists</a></h1>
+{% endblock %}
+
+{% block nav-global %}
+
+<a style="float: left; margin-top: 1px; margin-left: 5px;" href="{% url 'orders' %}">View Order Queue</a>
+
+{% endblock %}

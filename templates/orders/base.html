@@ -1,0 +1,37 @@
+{% extends "importers.html" %}
+
+
+	{% block content %}
+		<div class="bodyContent">
+			<div class="header">
+				<h1 class="order-heading">Order Queue</h1>
+				<div class="rightPanel">
+
+					<h3 class="username">{{ user.username }}</h3>
+
+					<div class="refresh">
+						<a class="refresh-btn">Refresh Orders</a>
+						<p class="lastRefresh"></p>
+					</div>
+
+					{% autoescape off %}
+					{{ displayAdmin }}
+					{% endautoescape %}
+
+					<div class="btnCont">
+						<a class="logout" title="Logout" href="{% url 'logout' %}"></a>
+					</div>
+
+				</div>
+			</div>
+
+			{% autoescape off %}
+
+			<!--This is variable for the playground section-->
+			{{ playground }}
+
+			{% endautoescape %}
+
+		</div>
+	{% endblock content %}
+</div>

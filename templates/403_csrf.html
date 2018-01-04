@@ -1,0 +1,8 @@
+{% extends "importers.html" %}
+
+{% block content %}
+<div style="margin-top: 100px;" align="center">
+	<h3 style="font-family: helvetica; margin-bottom: 50px; font-size: 30px; font-weight: lighter;">Your session has expired. Please click below to login again.</h3>
+	<a style="text-decoration: none; background-color: #4285f4; color: #ffffff; font-family: helvetica; padding: 10px 20px; font-size: 20px; border-radius: 3px; font-weight: lighter;" href="{% url 'login' %}">Login</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,193 @@
+/*
+  =========================================================================================================================================================================================================
+  General Styles
+  Author: Kenton
+  =========================================================================================================================================================================================================
+*/
+
+
+/*
+  =========================================================================================================================================================================================================
+  Fonts
+  =========================================================================================================================================================================================================
+*/
+@font-face { font-family: 'Tangerine-Bold'; src: url('../fonts/Tangerine-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Carme-Regular'; src: url('../fonts/Carme-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'NEOTERICc-Bold'; src: url('../fonts/NEOTERICc - Bold.ttf') format('truetype'); }
+@font-face { font-family: 'NEOTERICc-Regular'; src: url('../fonts/NEOTERICc - Regular.ttf') format('truetype'); }
+
+
+/*
+  =========================================================================================================================================================================================================
+  General Page Layout
+  =========================================================================================================================================================================================================
+*/
+html { height: 100%; }
+body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; background-attachment: fixed; font-family: Helvetica; font-weight: lighter; }
+
+/*
+  =========================================================================================================================================================================================================
+    Sidebar Section
+  =========================================================================================================================================================================================================
+*/
+.landing_container { float: left; position: relative; width: 100%; height: 560px; background: #0b0c10;}
+
+
+.landing_container .header_container {float: left; position: relative; width: 100%; height: 50px; }
+.landing_container .header_container .drop_down { float: right; position: relative; width: auto; height: 26px; margin: 12px; display: none; }
+.landing_container .header_container .drop_down:hover { cursor: pointer; }
+
+
+.landing_container .header_container .menus {float: left; position: relative; }
+.landing_container .header_container .menus.dropped {float: right; width: 134px; top: 50px; right: 0px; position: absolute; z-index: 1;  }
+.landing_container .header_container .menus .scroll_to { float: left; position: relative; width: 134px; color: #21ce99; font-size: 18px; line-height: 50px; font-family: NEOTERICc-Bold; text-align: center; }
+.landing_container .header_container .menus .scroll_to:hover { cursor: pointer; font-size: 22px; }
+.landing_container .header_container .my_name {float: left; position: relative; width: auto; color: #21ce99; line-height: 50px; padding: 0 35px; font-family: NEOTERICc-Bold; font-size: 36px; margin-right: 35px; }
+
+
+.landing_container .welcome_container {float: left; position: relative; width: calc(50% - 36px); height: calc(100% - 120px); margin: 70px 0 0 36px; }
+.landing_container .welcome_container .information { float: left; position: relative; width: 100%; height: auto; max-height: 250px; margin-bottom: 20px;  }
+.landing_container .welcome_container .information .about_me { float: left; position: relative; width: 105px; height: auto; margin-right: 5px;}
+.landing_container .welcome_container .information .about_me span { float: right; position: relative; width: auto; height: 30px; font-size: 18px; font-family: NEOTERICc-Bold; margin: 0; }
+
+
+/* #info-1 {width: 415px;}
+#info-2 {width: 30%;} */
+#info-3 {}
+
+#first span { font-weight: bold; color: #d0d1d3; }
+#second { float: left; width: calc(100% - 120px); min-width: 200px; margin-left: 5px; }
+#second span { float: left; width: 100%; color: #898D90;}
+#gpa {margin-left: 15px;}
+#font-1 {font-family: 'Arial Narrow';}
+#font-2 { width: auto !important;}
+#font-3 {font-family: 'Arial Narrow'; width: 50% !important; margin-left: 5px;}
+
+
+.landing_container .welcome_container .information .languages { float: left; position: relative; width: 100%; height: auto;  }
+.landing_container .welcome_container .information .languages .language { float: left; position: relative; width: 100%; }
+.landing_container .welcome_container .information .languages .language span { float: left; position: relative; padding: 3px 10px; color: #0B0C10; line-height: 20px; border-radius: 3px; font-size: 14px; text-align: center; margin: 0 5px 5px 0; background: #d0d1d3;}
+
+.landing_container .welcome_container .information .internship {float: left; position: relative; width: 100%; }
+.landing_container .welcome_container .information .internship .text { float: left; position: relative; width: 100%;  }
+.landing_container .welcome_container .information .internship .text span { float: left; position: relative; font-size: 20px; line-height: 32px; color: #21ce99;}
+.landing_container .welcome_container .information .internship .contact_me { float: left; position: relative; padding: 10px 15px; font-size: 14px; margin-top: 12px; border-radius: 3px; background: #d0d1d3; color: #040d14;} 
+.landing_container .welcome_container .information .internship .contact_me:hover {box-shadow: 3px 3px 0px 1px #21ce99; cursor: pointer; background: white; }
+
+
+.landing_container .comp_container {float: left; position: relative; width: 50%; height: calc(100% - 50px); }
+.landing_container .comp_container .position_projects { float: left; position: relative; width: 80%; height: auto; left: 10%;  }
+.landing_container .comp_container .position_projects .computer {float: left; position: relative; width: 100%; height: auto; box-shadow: -61px -37px 10px -52px;}
+
+
+
+.landing_container .comp_container .position_projects .projects_container { position: relative; width: 91.8%;left: 4.1%; padding-bottom: 50.2%; margin-top: 6.3%;}
+
+.projects_container .project { position: absolute; width: 70%; height: 24%; background: #d0d1d3; border-radius: 3px; left: 15%; box-shadow: 3px 4px 4px -2px;}
+.projects_container .project:hover { background: white; box-shadow: 3px 3px 0px 1px #21ce99; cursor: pointer; }
+.projects_container .project:hover .text_container span { color: #0B0C10;}
+
+.projects_container .project:nth-child(1) { top: 7%; }
+.projects_container .project:nth-child(2) { top: 38%; }
+.projects_container .project:nth-child(3) {top: 69%; }
+
+/* background: #00bfff; */
+
+.projects_container .project .img_container {float: left; position: relative; width: 20%; height: 100%; }
+.projects_container .project .img_container img { float: left; position: relative; height: 90%; margin: 4% 0 4%15%; }
+
+
+.projects_container .project .text_container {float: left; position: relative; width: 78%; height: 100%; }
+.projects_container .project .text_container span { float: left; position: relative; width: 100%; text-align: center; font-size: 2vmin; top: 40%; color: #040d14; }
+
+
+
+.go_to_start { position: absolute; width: 46px; height: 46px; border-radius: 25px; background: burlywood; left: calc(50% - 23px); bottom: -23px; z-index: 1;}
+
+
+/*
+  =========================================================================================================================================================================================================
+    Mobile Styles
+  =========================================================================================================================================================================================================
+*/
+
+.landing_container.mobile { height: auto; }
+.landing_container .header_container .drop_down.mobile { height: 20px; margin: 15px; }
+.landing_container .header_container .my_name.mobile { margin: 0 0 0 10px; padding: 0;}
+.landing_container .welcome_container.mobile { width: 100%; margin: 10px 0 10px 0;}
+#first.mobile {width: 86px; }
+#first span.mobile { font-size: 14px; margin-left: 8px; }
+#second.mobile { width: 152px; min-width: 50px; margin-right: 0;}
+#second span.mobile {font-size: 14px; }
+#info-1.mobile { width: 250px; margin: 0 auto; float: none; display: table; margin: 0 auto 22px auto; }
+#info-2.mobile {width: auto; display: table; margin: 0 auto; float: none; max-width: 90%; margin: 0 auto 22px auto;}
+#info-3.mobile {width: 92%; left: 4%; text-align: center; }
+
+.landing_container .welcome_container .information .internship .text span.mobile {font-size: 18px; line-height: 26px; }
+.landing_container .welcome_container .information .internship .contact_me.mobile { width: 122px; padding: 10px 0px; left: calc(50% - 61px);}
+.landing_container .comp_container.mobile { width: 92%; left: 4%}
+.landing_container .comp_container .position_projects.mobile { margin: 0 !important; } 
+.contents_container .portfolio_container .project .text_container .mobile { margin-left: 5%; font-size: 12px; }
+.contents_container .portfolio_container .project .text_container.mobile { width: 100%; }
+
+.contents_container .portfolio_container .project .img_container.mobile {width: 100%; }
+.contents_container .portfolio_container .project .img_container img.mobile { width: 50%; margin: 2% 25%;}
+
+/*
+  =========================================================================================================================================================================================================
+    Main Content
+  =========================================================================================================================================================================================================
+*/
+.header {position: relative; width: 100%; height: 50px; line-height: 50px; margin: 0 0 10px 0; text-align: center; font-family: NEOTERICc-Bold; color: white; font-size: larger; }
+.header.white { background: white; color: #0B0C10; }
+.header.black { background: #0B0C10;}
+.header.green { background: #21ce99;}
+/* #position-3 { background: #f0efef; color: black;} 
+#position-4 { background: #272727;} */
+
+.header_triangle { position: absolute; left: calc(50% - 20px); top: 50px; width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; z-index: 1;}
+.header_triangle.white { border-top: 18px solid white; z-index: 1}
+.header_triangle.black { border-top: 18px solid #0B0C10; z-index: 1}
+.header_triangle.green { border-top: 18px solid #21ce99; z-index: 1}
+
+.contents_container {float: left; position: relative; width: 100%; height: 100%; font-size: 20px;}
+.contents_container .about_me_container {float: left; position: relative; width: 100%; height: auto; background: white;} 
+
+.contents_container .about_me_container .img_container { float: left; position: relative; width: 26%; margin: 2%;  }
+.contents_container .about_me_container .img_container img { float: left; position: relative; width: 100%; height: auto; border-radius: 3px; box-shadow: 0px 0px 5px 0px; }
+
+.contents_container .about_me_container .paragraph_container { position: relative; width: 90%; margin: auto;  }
+.contents_container .about_me_container .paragraph_container .paragraph { display: table; position: relative; width: auto; max-width: 90%; height: auto; margin: 20px auto 0 auto; }
+.contents_container .about_me_container .paragraph_container .paragraph span {float: left; position: relative; font-size: 16px; line-height: 30px; color: #0B0C10; }
+
+
+h2 { position: relative; width: 100%; height: 50px; line-height: 50px; margin: 0; text-align: center; color: #0B0C10;}
+h2.mobile {font-size: 16px; }
+.contents_container .portfolio_container { float: left; position: relative; width: 100%; background: #21ce99; }
+.contents_container .portfolio_container .project { float: left; position: relative; width: 90%; background: white; margin: 20px 5%; border-radius: 5px; box-shadow: 0px 0px 10px 0px; }
+.contents_container .portfolio_container .project:hover {background: #898D90; cursor: pointer; }
+.contents_container .portfolio_container .project:hover .text_container span {color: white; }
+.contents_container .portfolio_container .project:hover h2 {color: white; }
+
+
+.contents_container .portfolio_container .project .img_container { float: left; position: relative; width: 25%; }
+.contents_container .portfolio_container .project .img_container img {float: left; position: relative; width: 70%; margin: 10% 30%; max-height: 100px; }
+.contents_container .portfolio_container .project .text_container {float: left; position: relative; width: 75%;}
+.contents_container .portfolio_container .project .text_container span { float: left; position: relative; font-size: 16px; margin: 0 5% 0 0; line-height: 30px; color: #0B0C10;}
+
+
+.contents_container .contact_me_container {float: left; position: relative; width: 100%; height: auto; background: #0B0C10; }
+.contents_container .contact_me_container .form_container { position: relative; width: 50%; margin: auto;  }
+.contents_container .contact_me_container .form_container input { float: left; position: relative; width: 100%; height: 25px; border-radius: 3px; } 
+.contents_container .contact_me_container .form_container span {float: left; position: relative; width: 100%; margin: 20px 0 5px 0; color: white; }
+
+.contents_container .contact_me_container .form_container .send_email { float: right; position: relative; padding: 10px 15px; font-size: 14px; margin-top: 12px; border-radius: 3px; background: #21CE99; color: #040d14;}
+.contents_container .contact_me_container .form_container .send_email:hover { box-shadow: 3px 3px 0px 1px #21ce99; cursor: pointer; background: white; }
+#message { margin-bottom: 20px; }
+
+
+.contents_container .contact_me_container .form_container .alternative_container {float: left; position: relative; width: 100%;}
+.contents_container .contact_me_container .form_container .alternative_container span {position: relative; width: 100%; margin: 30px auto; text-align: center; color: white;  }
+.contents_container .contact_me_container .form_container .alternative_container span:nth-child(1) {margin: 100px auto !important; }
+.contents_container .contact_me_container .form_container .alternative_container span:nth-child(1):hover {cursor: pointer; color: #21CE99;  }
+.contents_container .contact_me_container .form_container .alternative_container span:nth-child(1).mobile { font-size: 16px }
