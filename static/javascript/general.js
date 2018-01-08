@@ -114,11 +114,12 @@ function redirect() {
 	$('.project').click(function() {
 
 		var project = $(this).attr('id');
+		console.log(window.location.href);
 
 		if (project == 'importers') {
-			window.location.href = "http://127.0.0.1:8000/login/";
+			window.location.href = window.location.href + "login/";
 		} else if (project == 'mrbm') {
-			window.location.href = "http://127.0.0.1:8000/mrbm/";
+			window.location.href = window.location.href + "mrbm/";
 		} else if (project == 'gaming') {
 			window.location.href = "http://d8emrxif7467f.cloudfront.net/index.html";
 		}
