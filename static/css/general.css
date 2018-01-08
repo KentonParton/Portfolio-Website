@@ -39,7 +39,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 
 
 .landing_container .header_container .menus {float: left; position: relative; }
-.landing_container .header_container .menus.dropped {float: right; width: 134px; top: 50px; right: 0px; position: absolute; z-index: 1;  }
+.landing_container .header_container .menus.dropped {float: right; width: 134px; top: 50px; right: 0px; position: absolute; z-index: 1; background: white; border-bottom-left-radius: 3px; border-top-left-radius: 3px;  }
 .landing_container .header_container .menus .scroll_to { float: left; position: relative; width: 134px; color: #21ce99; font-size: 18px; line-height: 50px; font-family: NEOTERICc-Bold; text-align: center; }
 .landing_container .header_container .menus .scroll_to:hover { cursor: pointer; font-size: 22px; }
 .landing_container .header_container .my_name {float: left; position: relative; width: auto; color: #21ce99; line-height: 50px; padding: 0 35px; font-family: NEOTERICc-Bold; font-size: 36px; margin-right: 35px; }
@@ -76,7 +76,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 
 
 .landing_container .comp_container {float: left; position: relative; width: 50%; height: calc(100% - 50px); }
-.landing_container .comp_container .position_projects { float: left; position: relative; width: 80%; height: auto; left: 10%;  }
+.landing_container .comp_container .position_projects { float: left; position: relative; width: 80%; height: auto; left: 10%; max-width: 585px;   }
 .landing_container .comp_container .position_projects .computer {float: left; position: relative; width: 100%; height: auto; box-shadow: -61px -37px 10px -52px;}
 
 
@@ -98,7 +98,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 
 
 .projects_container .project .text_container {float: left; position: relative; width: 78%; height: 100%; }
-.projects_container .project .text_container span { float: left; position: relative; width: 100%; text-align: center; font-size: 2vmin; top: 40%; color: #040d14; }
+.projects_container .project .text_container .demo { float: left; position: relative; width: 100%; text-align: center; font-size: 14px; top: 40%; color: #040d14; }
 
 
 
@@ -126,7 +126,9 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .landing_container .welcome_container .information .internship .text span.mobile {font-size: 18px; line-height: 26px; }
 .landing_container .welcome_container .information .internship .contact_me.mobile { width: 122px; padding: 10px 0px; left: calc(50% - 61px);}
 .landing_container .comp_container.mobile { width: 92%; left: 4%}
-.landing_container .comp_container .position_projects.mobile { margin: 0 !important; } 
+.projects_container .project .text_container .demo.mobile { font-size: 12px;}
+
+.landing_container .comp_container .position_projects.mobile { margin: 0 !important; width: 100%; left: 0; } 
 .contents_container .portfolio_container .project .text_container .mobile { margin-left: 5%; font-size: 12px; }
 .contents_container .portfolio_container .project .text_container.mobile { width: 100%; }
 

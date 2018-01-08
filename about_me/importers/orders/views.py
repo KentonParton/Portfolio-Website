@@ -96,7 +96,7 @@ def buildPlaygroundSection(request):
 				</div> \
 			</div> '
 
-	html += '<div class="notice">Please note that all product and client information has been randomly created and are purely for demonstration purposes.</div>'
+	html += '<div class="notice">Please note that all product and client information has been randomly created and are purely for demonstration purposes; and that the time-zone of this project is based in South Africa/UTC.</div>'
 
 	# Returns HTML
 	return html

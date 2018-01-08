@@ -77,6 +77,7 @@ function mobile_switch() {
 		['.my_name'],
 		['.welcome_container'],
 		['#first span'],
+		['.projects_container .project .text_container .demo'],
 		['#first'],
 		['#second'],
 		['#second span'],
@@ -95,7 +96,6 @@ function mobile_switch() {
 		['.contents_container .portfolio_container .project .img_container'],
 		['.contents_container .portfolio_container .project .img_container img'],
 	]
-	console.log('1');
 
 	if ($(window).width() <= 812) {
 		for (i = 0; i < class_array.length; i++) { 
@@ -130,7 +130,6 @@ function scroll_to_div() {
 	$('.scroll_to, .contact_me').click(function() {
 
 		var div_id = $(this).attr('id').split('-');
-		console.log(div_id);
 		$(window).scrollTop( $('#position-' + div_id[1]).offset().top);
 	});
 }

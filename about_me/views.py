@@ -79,7 +79,7 @@ def build_main_page(request):
 								<img src="./static/images/about_me/box.svg"> \
 							</div> \
 							<div class="text_container"> \
-								<span>Order Tracking System</span> \
+								<span class="demo">Order Tracking System</span> \
 							</div> \
 						</div> \
 						<div id="mrbm" class="project"> \
@@ -87,7 +87,7 @@ def build_main_page(request):
 								<img src="./static/images/about_me/sketch.svg"> \
 							</div> \
 							<div class="text_container"> \
-								<span>Modular Building System</span> \
+								<span class="demo">Modular Building System</span> \
 							</div> \
 						</div> \
 						<div id="gaming" class="project"> \
@@ -95,7 +95,7 @@ def build_main_page(request):
 								<img src="./static/images/about_me/gaming.svg"> \
 							</div> \
 							<div class="text_container"> \
-								<span>Gaming Website</span> \
+								<span class="demo">Gaming Website</span> \
 							</div> \
 						</div> \
 					</div> \
