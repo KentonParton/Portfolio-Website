@@ -128,7 +128,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .landing_container .comp_container.mobile { width: 92%; left: 4%}
 .projects_container .project .text_container .demo.mobile { font-size: 12px;}
 
-.landing_container .comp_container .position_projects.mobile { margin: 0 !important; width: 100%; left: 0; } 
+.landing_container .comp_container .position_projects.mobile { margin: 0 !important; width: 100%; left: 0; max-width: none;  } 
 .contents_container .portfolio_container .project .text_container .mobile { margin-left: 5%; font-size: 12px; }
 .contents_container .portfolio_container .project .text_container.mobile { width: 100%; }
 

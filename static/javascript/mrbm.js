@@ -57,7 +57,7 @@ function cornerHide() {
 			$("#wallType2").val('0');
 
 		}else {
-			console.log('Complete Selected');
+			// console.log('Complete Selected');
 			//if a complete wall is selected, show corner junction option
 			$(".inputCont:eq(2)").show();
 		}
@@ -268,6 +268,8 @@ function activateToolbar(){
 				break;
 			case 'delete':
 
+				//gets data-id of the clicked toolbar control
+				var divDataID = $(this).attr('data-id');
 				//removes the #draggable id div
 				$('#draggable-' + divDataID).remove();
 
@@ -482,7 +484,7 @@ function activateSwitch() {
 	$('.shutterC').unbind('click');
 	$('.shutterC').bind('click', function(){
 
-		console.log('switch Activated');
+		// console.log('switch Activated');
 
 		//gets id of parent div
 		var parentID = $(this).parent().attr('id');
@@ -600,7 +602,7 @@ function activateFlip() {
 //Activates drag plugin and changes background color of drag icon in toolbar
 function activateDrag() {
 
-	console.log('drag Activated');
+	// console.log('drag Activated');
 
 	//disables sortable plugin
 	$('.wallCont').sortable('disable');

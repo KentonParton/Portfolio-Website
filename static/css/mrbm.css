@@ -57,7 +57,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 
 /* ZOOM  Section */
 .playground { background: white none no-repeat fixed 0 0; float: left; height: 100%; overflow: hidden; width: calc(100% - 480px); }
-.playground .zoom { float: right; position: relative; width: 70px; height: 35px;  }
+.playground .zoom { float: right; position: relative; width: 70px; height: 35px; display: none;  }
 .playground .zoom img { float: left; position: relative; width: 50%; height: auto; background: transparent; transition: background-color 0.5s ease;  }
 .playground .zoom img:hover { cursor: pointer; background-color: rgba(13,60,125, 0.5);   }
 

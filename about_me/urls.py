@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # included URL's from apps
-    url(r'^mrbm/', include('about_me.mrbm.urls')),
+    url(r'', include('about_me.mrbm.urls')),
     url(r'', include('about_me.importers.urls')),
 
     # url(r'^GETvalues/', views.GETvalues, name='GETvalues'),

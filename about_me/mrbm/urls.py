@@ -19,7 +19,7 @@ from django.contrib import admin
 from about_me.mrbm import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^mrbm/', views.index, name='index'),
     
     url(r'^inputAccept/', views.inputAccept, name='inputAccept'),
 

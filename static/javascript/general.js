@@ -59,7 +59,7 @@ function adjust_divs() {
 		}
 	} else {
 		if ($('.menus').hasClass('dropped')) {
-			mobile_switch();
+			
 		} else {
 			$('.menus').addClass('dropped');
 			$('.drop_down').show();
@@ -67,6 +67,7 @@ function adjust_divs() {
 			
 		}
 	}
+	mobile_switch();
 }
 
 function mobile_switch() {
@@ -114,7 +115,7 @@ function redirect() {
 	$('.project').click(function() {
 
 		var project = $(this).attr('id');
-		console.log(window.location.href);
+		// console.log(window.location.href);
 
 		if (project == 'importers') {
 			window.location.href = window.location.href + "login/";
