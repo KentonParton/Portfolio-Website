@@ -111,7 +111,7 @@ def build_main_page(request):
 				</div--> \
 				<div class="paragraph_container"> \
 					<div class="paragraph"> \
-						<span>&ldquo;Intuitive design and functionality is how we give the user new superpowers.&rdquo;</span> \
+						<span>&ldquo;Intuitive design and functionality are how we give the user new superpowers.&rdquo;</span> \
 					</div> \
 					<div class="paragraph"> \
 						<span>I am a skilled developer, who strives to create applications with flawless functionality and a unique user experience. </span> \
