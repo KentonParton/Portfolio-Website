@@ -78,6 +78,7 @@ function mobile_switch() {
 		['.my_name'],
 		['.welcome_container'],
 		['#first span'],
+		['.projects_container .project .text_container'],
 		['.projects_container .project .text_container .demo'],
 		['#first'],
 		['#second'],
@@ -118,11 +119,12 @@ function redirect() {
 		// console.log(window.location.href);
 
 		if (project == 'importers') {
-			window.location.href = window.location.href + "login/";
+			// window.location.href = window.location.href + "login/";
+			window.open(window.location.href + "login/");
 		} else if (project == 'mrbm') {
-			window.location.href = window.location.href + "mrbm/";
+			window.open(window.location.href + "mrbm/");
 		} else if (project == 'gaming') {
-			window.location.href = "http://d8emrxif7467f.cloudfront.net/index.html";
+			window.open("http://d8emrxif7467f.cloudfront.net/index.html");
 		}
 	});
 }

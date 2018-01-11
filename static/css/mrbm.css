@@ -63,9 +63,10 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 
 
 /* Walls and Hover */
-.playground .mainBlock { display: inline-block; position: absolute !important; cursor: pointer; width: auto; height: 14px; z-index: 1}
+.playground .mainBlock { display: inline-block; position: absolute !important; cursor: pointer; width: auto; height: 30px; z-index: 1}
+.playground .mainBlock:hover .toolbar {display: block; }
 
-.playground .mainBlock .toolbar { float: left; position: absolute;  top: -40px; left: calc(50% - 90px); width: 180px; height: 26px;  }
+.playground .mainBlock .toolbar { float: left; position: absolute;  top: -40px; left: calc(50% - 90px); width: 180px; height: 26px; display: none;  }
 .playground .mainBlock .toolbar .controls { float: left; position: relative; width: 30px; height: 100%; background: #B3B3B3;}
 .playground .mainBlock .toolbar #control-1 { border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
 .playground .mainBlock .toolbar #control-6 {  border-top-right-radius:8px; border-bottom-right-radius: 8px; background: #888888; }
@@ -75,7 +76,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .playground .mainBlock .toolbar .controls .drag { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto; z-index: 1; }
 .playground .mainBlock .toolbar .controls .switch { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto; z-index: 1; }
 .playground .mainBlock .toolbar .controls .flip { width: 20px; height: 20px; padding-top: 3px; margin: 0 auto; z-index: 1; }
-.playground .mainBlock .arrow { float: left; position: absolute; top: -14px; left: calc(50% - 90px); width: 180px; height: 14px; }
+.playground .mainBlock .arrow { float: left; position: absolute; top: -14px; width: 100%; height: 14px; }
 
 .playground .mainBlock:hover .toolbar,
 .playground .mainBlock .toolbar:hover { display: block; }
@@ -131,6 +132,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 
 .rightSect { float: right; height: 100%; position: relative; width: 224px; background: #8B9DC3;}
 .rightSect .key { float: left; position: relative; width: 100%;}
+
 .rightSect .key .keyCont:nth-child(2) { min-height: 84px;}
 /* .rightSect .key .shutterCont:nth-child(7){min-height: 30px;} */
 .rightSect .key .keyCont {float: left; position: relative; width: calc(100% - 20px); height: auto; background: #DFE3EE; border-radius: 3px; box-shadow: 0px 0px 4px 0px; margin: 10px 10px 0 10px; padding-bottom: 10px; }
@@ -142,4 +144,3 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .rightSect .key .shutterCont { float: left; margin: 10px 0 0 10px; max-height: 50px; position: relative; width: calc(100% - 20px); }
 .rightSect .key .shutterCont h3 { float: left; font-size: 14px; font-weight: initial; margin: 0 10px 0 0; position: relative; width: auto; }
 .rightSect .key .shutterCont .shutter { float: left; height: 20px; position: relative; width: 90px; }
-

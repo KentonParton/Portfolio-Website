@@ -97,8 +97,8 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .projects_container .project .img_container img { float: left; position: relative; height: 90%; margin: 4% 0 4%15%; }
 
 
-.projects_container .project .text_container {float: left; position: relative; width: 78%; height: 100%; }
-.projects_container .project .text_container .demo { float: left; position: relative; width: 100%; text-align: center; font-size: 14px; top: 40%; color: #040d14; }
+.projects_container .project .text_container {float: left; position: relative; width: 78%; display: table-cell; top: calc(50% - 7px);  }
+.projects_container .project .text_container .demo { float: left; position: relative; width: 100%; text-align: center; font-size: 14px; color: #040d14; }
 
 
 
@@ -126,6 +126,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .landing_container .welcome_container .information .internship .text span.mobile {font-size: 18px; line-height: 26px; }
 .landing_container .welcome_container .information .internship .contact_me.mobile { width: 122px; padding: 10px 0px; left: calc(50% - 61px);}
 .landing_container .comp_container.mobile { width: 92%; left: 4%}
+.projects_container .project .text_container.mobile { top: calc(50% - 6px);}
 .projects_container .project .text_container .demo.mobile { font-size: 12px;}
 
 .landing_container .comp_container .position_projects.mobile { margin: 0 !important; width: 100%; left: 0; max-width: none;  } 

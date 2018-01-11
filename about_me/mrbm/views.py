@@ -247,12 +247,12 @@ def buildWallHTML(request, wallCount, countShutterList):
 	tCount = 0
 
 	control_array = [
-		['1', 'rotate', '../static/images/mrbm/toolbar/rotate.svg'],
-		['2', 'delete', '../static/images/mrbm/toolbar/delete.svg'],
-		['3', 'sort', '../static/images/mrbm/toolbar/sort.svg'],
-		['4', 'switch', '../static/images/mrbm/toolbar/switch.svg'],
-		['5', 'flip', '../static/images/mrbm/toolbar/flip.svg'],
-		['6', 'drag', '../static/images/mrbm/toolbar/drag.svg'],
+		['1', 'rotate', '../static/images/mrbm/toolbar/rotate.svg', 'Rotate Wall'],
+		['2', 'delete', '../static/images/mrbm/toolbar/delete.svg', 'Delete Wall'],
+		['3', 'sort', '../static/images/mrbm/toolbar/sort.svg', 'Sort Shutters'],
+		['4', 'switch', '../static/images/mrbm/toolbar/switch.svg', 'Switch Corner-junction, click it!'],
+		['5', 'flip', '../static/images/mrbm/toolbar/flip.svg', 'Flip Corner/T Junction, click it!'],
+		['6', 'drag', '../static/images/mrbm/toolbar/drag.svg', 'Drag Wall'],
 	]
 
 	# Builds HTML
@@ -264,7 +264,7 @@ def buildWallHTML(request, wallCount, countShutterList):
 	for controls in control_array:
 
 		html += ' \
-				<div id="control-' + controls[0] + '" class="controls" data-type="' + controls[1] + '" data-id="' + wallCount + '"> \
+				<div id="control-' + controls[0] + '" title="' + controls[3] + '" class="controls" data-type="' + controls[1] + '" data-id="' + wallCount + '"> \
 					<div class="' + controls[1] + '" > \
 						<img src="' + controls[2] + '"> \
 					</div> \

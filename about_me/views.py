@@ -111,10 +111,10 @@ def build_main_page(request):
 				</div--> \
 				<div class="paragraph_container"> \
 					<div class="paragraph"> \
-						<span>&ldquo;Intuitive design is how we give the user new superpowers.&rdquo;</span> \
+						<span>&ldquo;Intuitive design and functionality is how we give the user new superpowers.&rdquo;</span> \
 					</div> \
 					<div class="paragraph"> \
-						<span>I am a skilled web developer, who strives to create applications with flawless functionality and a unique user experience. </span> \
+						<span>I am a skilled developer, who strives to create applications with flawless functionality and a unique user experience. </span> \
 					</div> \
 					<div class="paragraph"> \
 						<span>Through my personal projects and internship experiences, I have realized that I love working with clients directly or with a team to create innovative solutions. Furthermore, my enthusiasm for technology, business, and the future inspires me to learn new things whenever an opportunity arises.</span> \
