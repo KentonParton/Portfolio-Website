@@ -55,7 +55,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 #info-2 {width: 30%;} */
 #info-3 {}
 
-#first span { font-weight: bold; color: #d0d1d3; text-align: right; }
+#first span { width: 100%; font-weight: bold; color: #d0d1d3; text-align: right; }
 #second { float: left; width: calc(100% - 120px); min-width: 200px; margin-left: 5px; }
 #second span { float: left; width: 100%; color: #898D90;}
 #gpa {margin-left: 15px;}
