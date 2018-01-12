@@ -159,18 +159,14 @@ def build_main_page(request):
 				<div class="header green" id="position-4">Contact Me</div> \
 				<div class="header_triangle green"></div> \
 				<div class="form_container"> \
-					<!--span>Name</span> \
-					<input id="name" placeholder="e.g. Kenton Parton" type="text"> \
-					<span>Email</span> \
-					<input id="email" placeholder="e.g. kknoxparton@gmail.com" type="text"> \
-					<span>Message</span>  \
-					<input id="message" placeholder="Write something cool here..." type="text"> \
-					<div class="send_email">Send</div--> \
 					<div class="alternative_container"> \
-						<!--span>OR</span--> \
-						<a href="mailto:kknoxparton@gmail.com"> \
-							<span>CLICK HERE TO EMAIL ME.</span> \
-						</a> \
+						<a href="mailto:kknoxparton@gmail.com">CLICK HERE TO EMAIL ME.</a> \
+					</div> \
+				</div> \
+				<div class="form_container"> \
+					<div class="text"> \
+						<span>I am always looking for new opportunities, projects, and things to learn. Feel free to reach out to me if you have something exciting to talk about, job/internship opportunities, or if you just want to talk.</span> \
+						<span>I look forward to hearing from you.</span> \
 					</div> \
 				</div> \
 			</div> \

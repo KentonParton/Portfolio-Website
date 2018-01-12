@@ -55,7 +55,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 #info-2 {width: 30%;} */
 #info-3 {}
 
-#first span { font-weight: bold; color: #d0d1d3; }
+#first span { font-weight: bold; color: #d0d1d3; text-align: right; }
 #second { float: left; width: calc(100% - 120px); min-width: 200px; margin-left: 5px; }
 #second span { float: left; width: 100%; color: #898D90;}
 #gpa {margin-left: 15px;}
@@ -116,7 +116,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .landing_container .header_container .my_name.mobile { margin: 0 0 0 10px; padding: 0;}
 .landing_container .welcome_container.mobile { width: 100%; margin: 10px 0 10px 0;}
 #first.mobile {width: 86px; }
-#first span.mobile { font-size: 14px; margin-left: 8px; }
+#first span.mobile { font-size: 14px; }
 #second.mobile { width: 152px; min-width: 50px; margin-right: 0;}
 #second span.mobile {font-size: 14px; }
 #info-1.mobile { width: 250px; margin: 0 auto; float: none; display: table; margin: 0 auto 22px auto; }
@@ -180,17 +180,19 @@ h2.mobile {font-size: 16px; }
 
 
 .contents_container .contact_me_container {float: left; position: relative; width: 100%; height: auto; background: #0B0C10; }
-.contents_container .contact_me_container .form_container { position: relative; width: 50%; margin: auto;  }
+.contents_container .contact_me_container .form_container { float: left; position: relative; width: 100%; margin: auto;  }
 .contents_container .contact_me_container .form_container input { float: left; position: relative; width: 100%; height: 25px; border-radius: 3px; } 
-.contents_container .contact_me_container .form_container span {float: left; position: relative; width: 100%; margin: 20px 0 5px 0; color: white; }
+.contents_container .contact_me_container .form_container .text { float: left; position: relative; width: 50%; font-size: 16px; margin: 2% 25% 5%; line-height: 30px;}
+.contents_container .contact_me_container .form_container .text.mobile { width: 80%; margin: 2% 10%;}
+.contents_container .contact_me_container .form_container span {float: left; position: relative; color: white; margin-bottom: 10px; }
 
 .contents_container .contact_me_container .form_container .send_email { float: right; position: relative; padding: 10px 15px; font-size: 14px; margin-top: 12px; border-radius: 3px; background: #21CE99; color: #040d14;}
 .contents_container .contact_me_container .form_container .send_email:hover { box-shadow: 3px 3px 0px 1px #21ce99; cursor: pointer; background: white; }
 #message { margin-bottom: 20px; }
 
 
-.contents_container .contact_me_container .form_container .alternative_container {float: left; position: relative; width: 100%;}
-.contents_container .contact_me_container .form_container .alternative_container span {position: relative; width: 100%; margin: 30px auto; text-align: center; color: white;  }
-.contents_container .contact_me_container .form_container .alternative_container span:nth-child(1) {margin: 100px auto !important; }
-.contents_container .contact_me_container .form_container .alternative_container span:nth-child(1):hover {cursor: pointer; color: #21CE99;  }
-.contents_container .contact_me_container .form_container .alternative_container span:nth-child(1).mobile { font-size: 16px }
+.contents_container .contact_me_container .form_container .alternative_container {float: left; position: relative; width: 100%; text-align: center; margin: 30px auto;}
+.contents_container .contact_me_container .form_container .alternative_container a { color: white;  text-decoration: none;}
+.contents_container .contact_me_container .form_container .alternative_container a:nth-child(1) {margin: 50px auto !important; }
+.contents_container .contact_me_container .form_container .alternative_container a:nth-child(1):hover {cursor: pointer; color: #21CE99;  }
+.contents_container .contact_me_container .form_container .alternative_container a:nth-child(1).mobile { font-size: 16px }

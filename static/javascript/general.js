@@ -97,6 +97,7 @@ function mobile_switch() {
 		['.alternative_container span:nth-child(2)'],
 		['.contents_container .portfolio_container .project .img_container'],
 		['.contents_container .portfolio_container .project .img_container img'],
+		['.contents_container .contact_me_container .form_container .text'],
 	]
 
 	if ($(window).width() <= 812) {
