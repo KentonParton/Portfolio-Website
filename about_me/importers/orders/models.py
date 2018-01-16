@@ -32,6 +32,7 @@ class Order(models.Model):
         ('1', 'In Transit'),
         ('2', 'Delivered')
     )
+
     client = models.ForeignKey("Client", on_delete=models.CASCADE)
     order_number = models.CharField(max_length=100, verbose_name="Order No.")
     due = models.DateTimeField(default=datetime.now()+timedelta(hours=24))

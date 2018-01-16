@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.contrib.auth.models import Permission
 from django.contrib.auth.models import Group
+from datetime import datetime, timedelta
 import sqlite3
 import json
 from about_me.importers.orders.models import Order, ProductItem, Client, Product
@@ -96,7 +97,7 @@ def buildPlaygroundSection(request):
 				</div> \
 			</div> '
 
-	html += '<div class="notice">Please note that all product and client information has been randomly created and are purely for demonstration purposes; and that the time-zone of this project is based in South Africa/UTC.</div>'
+	html += '<div class="notice">Please note that all product and client information are purely for demonstration purposes.</br>Time Zone: Central Time.</div>'
 
 	# Returns HTML
 	return html
@@ -146,10 +147,17 @@ def GETvalues(request):
 	static_list = []
 	product_list = []
 
+
+
+
 	for order in orders:
 
+		dateOne = order[4]
+
+		dateOne = datetime.strptime(dateOne, '%Y-%m-%d %H:%M:%S') - timedelta(hours=6)
+
 		static_list.append(order)
-		times.append(order[4])
+		times.append(str(dateOne))
 		countID.append(order[0])
 
 		countOrders += 1
@@ -162,6 +170,7 @@ def GETvalues(request):
 	times = json.dumps(times)
 	countID = json.dumps(countID)
 	conn.commit()
+
 
 	# checks if user is a super user
 	superUser = is_superuser(request)

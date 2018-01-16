@@ -29,7 +29,7 @@ $(document).ready(function () {
 	});
 
 	display_dropped();
-	redirect();
+	check_project();
 	scroll_to_div();
 });
 
@@ -112,23 +112,49 @@ function mobile_switch() {
 	}
 }
 
-function redirect() {
+function check_project() {
 
 	$('.project').click(function() {
 
 		var project = $(this).attr('id');
 		// console.log(window.location.href);
 
-		if (project == 'importers') {
-			// window.location.href = window.location.href + "login/";
-			window.open(window.location.href + "login/");
-		} else if (project == 'mrbm') {
-			window.open(window.location.href + "mrbm/");
-		} else if (project == 'gaming') {
-			window.open("http://d8emrxif7467f.cloudfront.net/index.html");
+		if ($(this).hasClass('top')) {
+			$('.overlay').show();
+			$('.description.' + project).show();
+			
+			//  KP || Un-binds the pageOverlay
+			$('.go-to').unbind('click');
+			$('.go-to').bind('click', function(){
+				$('.overlay').hide();
+				$('.description.' + project).hide();
+				redirect(project);
+			});
+
+			$('.overlay').unbind('click');
+			$('.overlay').bind('click', function(){
+				$('.overlay').hide();
+				$('.description.' + project).hide();
+			});
+
+		} else {
+			redirect(project);
 		}
 	});
 }
+
+function redirect(project) {
+
+	if (project == 'importers') {
+		// window.location.href = window.location.href + "login/";
+		window.open(window.location.href + "login/");
+	} else if (project == 'mrbm') {
+		window.open(window.location.href + "mrbm/");
+	} else if (project == 'gaming') {
+		window.open("http://d8emrxif7467f.cloudfront.net/index.html");
+	}
+}
+
 
 function scroll_to_div() {
 

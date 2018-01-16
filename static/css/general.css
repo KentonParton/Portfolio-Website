@@ -168,7 +168,7 @@ h2 { position: relative; width: 100%; height: 50px; line-height: 50px; margin: 0
 h2.mobile {font-size: 16px; }
 .contents_container .portfolio_container { float: left; position: relative; width: 100%; background: #21ce99; }
 .contents_container .portfolio_container .project { float: left; position: relative; width: 90%; background: white; margin: 20px 5%; border-radius: 5px; box-shadow: 0px 0px 10px 0px; }
-.contents_container .portfolio_container .project:hover {background: #898D90; cursor: pointer; }
+.contents_container .portfolio_container .project:hover {background: #898d90; cursor: pointer; }
 .contents_container .portfolio_container .project:hover .text_container span {color: white; }
 .contents_container .portfolio_container .project:hover h2 {color: white; }
 
@@ -196,3 +196,27 @@ h2.mobile {font-size: 16px; }
 .contents_container .contact_me_container .form_container .alternative_container a:nth-child(1) {margin: 50px auto !important; }
 .contents_container .contact_me_container .form_container .alternative_container a:nth-child(1):hover {cursor: pointer; color: #21CE99;  }
 .contents_container .contact_me_container .form_container .alternative_container a:nth-child(1).mobile { font-size: 16px }
+
+
+
+.overlay{ display: none; position: fixed; width: 100%; height: 100%; background: rgba(74, 74, 74, 0.5); z-index: 1; left: 0; top: 0; }
+.overlay .description { width: 90%; border-radius: 3px; overflow: hidden; background: #21ce99; color: white; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.overlay .description p { float: left; position: relative; width: 94%; font-size: 18px; margin: 4% 0 4% 3%; line-height: 24px; }
+
+.overlay .description .go-to { position: absolute; width: 3%; height: 100%; background: #FF5E56; top: 0; bottom: 0; right: 0; border-bottom-right-radius: 3px; border-top-right-radius: 3px; box-shadow: -4px 0px 3px -3px black; }
+.overlay .description .go-to:hover { background: #FF3A30; cursor: pointer; }
+.overlay .description .go-to img {position: absolute; width: 24px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.overlay .description.importers { display: none; }
+.overlay .description.mrbm { display: none;}
+.overlay .description.gaming { display: none;}
+
+
+
+
+
+
+
+
+
+

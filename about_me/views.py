@@ -74,7 +74,7 @@ def build_main_page(request):
 				<div class="position_projects"> \
 					<img class="computer" src="./static/images/imac.svg"> \
 					<div class="projects_container"> \
-						<div id="importers" class="project"> \
+						<div id="importers" class="project top"> \
 							<div class="img_container"> \
 								<img src="./static/images/about_me/box.svg"> \
 							</div> \
@@ -82,7 +82,7 @@ def build_main_page(request):
 								<span class="demo">Order Tracking System</span> \
 							</div> \
 						</div> \
-						<div id="mrbm" class="project"> \
+						<div id="mrbm" class="project top"> \
 							<div class="img_container"> \
 								<img src="./static/images/about_me/sketch.svg"> \
 							</div> \
@@ -90,7 +90,7 @@ def build_main_page(request):
 								<span class="demo">Modular Building System</span> \
 							</div> \
 						</div> \
-						<div id="gaming" class="project"> \
+						<div id="gaming" class="project top"> \
 							<div class="img_container"> \
 								<img src="./static/images/about_me/gaming.svg"> \
 							</div> \
@@ -133,7 +133,7 @@ def build_main_page(request):
 						<img src="./static/images/about_me/box.svg"> \
 					</div> \
 					<div class="text_container"> \
-						<span>Created a web application for a company named Importers Coffee Specialists which tracks and displays customer orders to warehouse staff. Each order details the contents and the time remaining for the order to be finished packing. An app is currently in progress which displays packed orders to a delivery driver. The order information is being accessed via a REST API created using the Django framework.</span> \
+						<span>Created a web-application for a company named Importers Coffee Specialists who distribute coffee and coffee related products to retailers throughout South Africa. This web-application bridges the communication gap between employees, who pack the contents of each order, and upper-level employees who enter the orders into the system. The secondary purpose of this web-applicatoin is to track and display customer orders to employees who will pack the necessary items. Each order details the contents and the time remaining for the order to be packed and loaded. An app is currently in progress which displays packed orders to the companies delivery drivers. This will allow Importers Coffee Specialists to oversee a larger portion of their processes. Django is the primary framework used in this project. Please feel free to interact with the web-app by adding new products, clients or orders.</span> \
 					</div> \
 				</div> \
 				<div id="mrbm" class="project"> \
@@ -142,7 +142,7 @@ def build_main_page(request):
 						<img src="./static/images/about_me/sketch.svg"> \
 					</div> \
 					<div class="text_container"> \
-						<span>I built a modular building system for a company name Mobile Rapid Building Methods (MRBM), which allowed them to generate a structure using there system dimensions based on wall inputs. This stystem would determine the most efficient use of their various system building components. </span> \
+						<span>I built a modular building system for a company named Mobile Rapid Building Methods (MRBM), who utilize a building system which reduces the time and labor to build a structure. The building system combine different sized shutters to create the walls of the building. My web-app calculates the most efficient combinations of each shutter to build the various portions of the structure. This process was previously done by hand through trial an error.</span> \
 					</div> \
 				</div> \
 				<div id="gaming" class="project"> \
@@ -173,21 +173,6 @@ def build_main_page(request):
 		</div> '
 
 	return html
-
-
-def sendEmail(answer):
-    
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login("kknoxparton@gmail.com", "Grindallday1")
-    
-    try:
-        server.sendmail("kknoxparton@gmail.com", "kentonparton@icloud.com", answer)
-        
-    except:
-        server.sendmail("kknoxparton@gmail.com", "kentonparton@icloud.com", "Email msg error...")
-    
-    server.quit()
 
 
 	
