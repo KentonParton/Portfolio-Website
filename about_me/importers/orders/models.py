@@ -64,7 +64,7 @@ class Order(models.Model):
             total = (subtotal - self.discount)
         else:
             total = subtotal
-        return u"R {}".format(total)
+        return u"$ {}".format(total)
 
     def client_name(self):
         return self.client.client
