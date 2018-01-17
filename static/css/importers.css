@@ -4,13 +4,13 @@ html { position: fixed; top: 0; bottom:0; right: 0; left: 0;}
 body { height: 100%; margin: 0 auto; overflow: auto; position: relative; width: auto; background: #323234; z-index: -1;  }
 
 .bodyContent { background: #121212 none repeat scroll 0 0; height: 100%; margin: 0 auto; overflow: auto; position: relative; width: 100%; float: left;}
-.subBody { background: url("../assets/cof.jpg") no-repeat scroll left top; width: 100%; height: 100%; z-index: -1; position: absolute; top: 0; background-size: 100% auto; }
-.request { text-align: center; width: 100%; position: relative; float: left; margin-top: 5px; color: red; }
+/* .subBody {  width: 100%; height: 100%; z-index: -1; position: absolute; top: 0; background-size: 100% auto; } */
+.request { font-size: 15px; font-family: arial; text-align: center; width: 100%; position: relative; float: left; margin-top: 30px; color: red; }
 
-.mainCont { position: relative; width: 100%; }
-.mainCont .loginCont { position: relative; width: auto; height: auto; margin-top: 90px; }
-.subCont { width: 35%; }
-.subCont img { z-index: 10; width: 82%; height: 100%; margin: 0; }
+.mainCont { float: left; position: relative; width: 100%; height: 100%; }
+.mainCont .loginCont { position: absolute; width: 80%; top: 40%; left: 50%; transform: translate(-50%, -50%); }
+.mainCont .loginCont .subCont { margin-top: 15%; position: relative; width: 100%; left: 50%; transform: translate(-50%, 0); float: left; max-width: 450px; }
+.mainCont .loginCont .subCont img { float: left; position: relative; width: 100%; height: 100%; margin: 0; float: left; }
 
 .login-fields { float: left; }
 .field { position: relative; margin-bottom: 10px; }
@@ -18,11 +18,11 @@ body { height: 100%; margin: 0 auto; overflow: auto; position: relative; width: 
 
 .logoCont { position: relative; width: auto; height: auto; }
 .order-heading { float: left; font-family: helvetica; font-weight: lighter; font-size: 30px; padding: 0; margin: 0px; color: white; }
-.login-form { width: 254px; }
-.login { border-radius: 1px; font-size: 14px; font-family: arial; margin-top: 0; }
-.login form { position: relative; }
-.hidden { visibility: hidden; margin: 15px 0 16px 0; padding: 5px 0; font-size: 15px }
-.invalid { color: #BF8F5E; font-size: 15px; margin: 15px 0 16px 0; width: 350px; padding: 10px 0; }
+.login-form { float: left; position: relative; width: 254px; left: calc(50% - 127px); }
+.login { float: left; position: relative;  width: 100%; border-radius: 1px; font-size: 14px; font-family: arial; margin-top: 0; float: left; position: relative; }
+.login img { width: 50%; max-width: 250px; }
+.hidden { visibility: hidden; float: left; color: #BF8F5E; font-size: 15px; margin: 10px 0 15px 0; width: 100%; text-align: center; }
+.invalid { float: left; color: #BF8F5E; font-size: 15px; margin: 10px 0 15px 0; width: 100%; text-align: center; }
 
 
 .login-btn { background: url("../assets/noSteamCup.svg") no-repeat scroll top; outline: none; border: none; cursor: pointer; width: 58px; height: 53px; z-index: 1; position: absolute; left: 0px; top: 1px; }

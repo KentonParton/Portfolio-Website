@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+
+	if ($(window).width() > 854) {
+		
+	}
+
 	checkPage();
 });
 

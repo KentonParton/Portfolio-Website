@@ -2,31 +2,29 @@
 {% load staticfiles %}
 
 {% block content %}
-<div class="subBody">
-	<div class="mainCont" align="center">
-		<div class="loginCont" align="center">
-			<div class="subCont" align="center">
-				<img src="{% static 'assets/logo.png' %}" height="150px" width="350px"; >
-				<span class="request">Please have respect for the privilages provided, enjoy!</span>
-			</div>
-			<div align="center" class="login">
-				<p {% if not form.errors %}class="hidden"{% else %}class="invalid"{% endif %}>Username or password invalid. Please try again</p>
-				<form class="login-form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
-			        {% csrf_token %}
-			        <div class="login-fields">
-				     	<div class="field">
-				        	<input name="username" placeholder="Enter Username" type="text" value="guest">
-				     	</div>
-				     	<div class="field">
-				        	<input name="password" placeholder="Enter Password" type="password" value="guest">
-				     	</div>
-			     	</div>
-			     	<div class="cofBack">
-				        <input class="login-btn" type="submit" value=""/>
-				        <input type="hidden" name="next" value="{{ next }}" />
-			        </div>
-			    </form>
-			</div>
+<div class="mainCont">
+	<div class="loginCont">
+		<div class="subCont">
+			<img src="{% static 'assets/logo.png' %}" >
+			<span class="request">Please have respect for the privilages provided, enjoy!</span>
+		</div>
+		<div class="login">
+			<p {% if not form.errors %}class="hidden"{% else %}class="invalid"{% endif %}>Username or password invalid. Please try again</p>
+			<form class="login-form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+				{% csrf_token %}
+				<div class="login-fields">
+					<div class="field">
+						<input name="username" placeholder="Enter Username" type="text" value="guest">
+					</div>
+					<div class="field">
+						<input name="password" placeholder="Enter Password" type="password" value="guest">
+					</div>
+				</div>
+				<div class="cofBack">
+					<input class="login-btn" type="submit" value=""/>
+					<input type="hidden" name="next" value="{{ next }}" />
+				</div>
+			</form>
 		</div>
 	</div>
 </div>
