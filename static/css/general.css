@@ -136,6 +136,8 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 .contents_container .portfolio_container .project .img_container.mobile {width: 100%; }
 .contents_container .portfolio_container .project .img_container img.mobile { width: 50%; margin: 2% 25%;}
 
+.overlay .description p.mobile { font-size: 12px; line-height: 20px; width: 90%; }
+
 /*
   =========================================================================================================================================================================================================
     Main Content
@@ -201,11 +203,15 @@ h2.mobile {font-size: 16px; }
 
 .overlay{ display: none; position: fixed; width: 100%; height: 100%; background: rgba(74, 74, 74, 0.5); z-index: 1; left: 0; top: 0; }
 .overlay .description { width: 90%; border-radius: 3px; overflow: hidden; background: #21ce99; color: white; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.overlay .description p { float: left; position: relative; width: 94%; font-size: 18px; margin: 4% 0 4% 3%; line-height: 24px; }
+
+.overlay .description.mobile { width: 96%;}
+.overlay .description .go-to.mobile { width: 6%;}
+
+.overlay .description p { float: left; position: relative; width: 93%; font-size: 18px; margin: 4% 2% 4% 2%; line-height: 24px; }
 
 .overlay .description .go-to { position: absolute; width: 3%; height: 100%; background: #FF5E56; top: 0; bottom: 0; right: 0; border-bottom-right-radius: 3px; border-top-right-radius: 3px; box-shadow: -4px 0px 3px -3px black; }
 .overlay .description .go-to:hover { background: #FF3A30; cursor: pointer; }
-.overlay .description .go-to img {position: absolute; width: 24px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.overlay .description .go-to img {position: absolute; width: 90%; max-width: 24px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
 .overlay .description.importers { display: none; }
 .overlay .description.mrbm { display: none;}
