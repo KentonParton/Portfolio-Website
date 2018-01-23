@@ -164,13 +164,16 @@ function rowSwitch(orderCount, timerID, pointInTime, currentPage){
 	var columnID = $('#' + getOrderID).attr('column');
 
 	// colors for each row
-	var colors = ['#9EE100', '#EFBC00', '#EF8900' ];
+	var colors = ['#008A91', '#9EE100', '#EFBC00', '#EF8900', '#EF2A00' ];
 	// row ID's
 	var rows = [ '#row4', '#row3', '#row2', '#row1']
 
 	//need to change this
 	// array or times as numerical value
-	var colomnRange = ['240001', '120001', '060001', '020001', '000001'];
+	var colomnRange = ['24', '12', '06', '02', '01'];
+
+	pointInTime = pointInTime.substring(0, 2);
+	console.log(pointInTime);
 
 	// loops thorugh colors
 	for ( k = 0; k < colors.length; k++){
@@ -186,25 +189,25 @@ function rowSwitch(orderCount, timerID, pointInTime, currentPage){
 		}
 	}
 
-	// if time is above 12 hours move to #row4
-	if (colomnRange[1] < pointInTime){
+	// // if time is above 12 hours move to #row4
+	// if (colomnRange[1] < pointInTime){
 
-		$('#' + getOrderID).appendTo('#row4 .orderCont' + ' #' + columnID);
+	// 	$('#' + getOrderID).appendTo('#row4 .orderCont' + ' #' + columnID);
 
-		$('#timer-' + getOrderID).css('color', '#008A91');
-		$('#block-' + getOrderID).css('background', '#008A91');
-		$('#digit-' + getOrderID).css('background', '#008A91');
-	}
+	// 	$('#timer-' + getOrderID).css('color', '#008A91');
+	// 	$('#block-' + getOrderID).css('background', '#008A91');
+	// 	$('#digit-' + getOrderID).css('background', '#008A91');
+	// }
 
-	if (pointInTime[0] === '-'){
+	// if (pointInTime[0] === '-'){
 
-		$('#' + getOrderID).appendTo('#row0 .orderCont' + ' #' + columnID);
+	// 	$('#' + getOrderID).appendTo('#row0 .orderCont' + ' #' + columnID);
 
-		$('#timer-' + getOrderID).css('color', '#EF2A00');
-		$('#block-' + getOrderID).css('background', '#EF2A00');
-		$('#digit-' + getOrderID).css('background', '#EF2A00');
+	// 	$('#timer-' + getOrderID).css('color', '#EF2A00');
+	// 	$('#block-' + getOrderID).css('background', '#EF2A00');
+	// 	$('#digit-' + getOrderID).css('background', '#EF2A00');
 
-	}
+	// }
 
 	// //displays orders
 	$('.ordCont').show();

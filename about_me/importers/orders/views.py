@@ -102,6 +102,7 @@ def buildPlaygroundSection(request):
 	# Returns HTML
 	return html
 
+
 # orders and products query
 def GETvalues(request):
 
@@ -120,7 +121,27 @@ def GETvalues(request):
 			orders_order.due
 		FROM orders_order
 		INNER JOIN orders_client ON orders_order.client_id = orders_client.id
-		WHERE orders_order.status = ''"""
+		WHERE orders_order.status = ''
+		ORDER BY
+		orders_order.due ASC"""
+
+	check_time = conn.execute(sql_orders)
+
+	for time in check_time:
+
+		db_time = datetime.strptime(str(time[4]), '%Y-%m-%d %H:%M:%S').strftime('%Y%m%d%H%M%S')
+		current_time = datetime.now().strftime('%Y%m%d%H%M%S')
+
+		if int(db_time) - int(current_time) < 0:
+
+			new_time =  datetime.now()  + timedelta(days=1)
+			new_time = str(new_time.strftime('%Y-%m-%d %H:%M:%S'))
+
+			order_id = str(time[0])
+
+			conn.execute('''UPDATE orders_order SET due = ? WHERE id = ?''',
+				(new_time, order_id))
+
 
 	sql_products = """SELECT orders_productitem.order_number_id,
 			orders_product.name,
@@ -148,8 +169,6 @@ def GETvalues(request):
 	product_list = []
 
 
-
-
 	for order in orders:
 
 		dateOne = order[4]
@@ -168,6 +187,7 @@ def GETvalues(request):
 
 
 	times = json.dumps(times)
+	# print times
 	countID = json.dumps(countID)
 	conn.commit()
 
@@ -223,20 +243,22 @@ def buildOrdersHTML(request, static_list, product_list):
 		numItems = int(0)
 
 		# places orders in correct column
-		if counter % 3 == 1:
+		if counter == 1:
 
 			html += '<div class="ordCont" id="'+ divID + '" column="column-1">'
 
-		if counter % 3 == 2:
+		if counter == 2:
 
 			html += '<div class="ordCont" id="'+ divID + '" column="column-2">'
 
-		if counter % 3 == 0:
+		if counter == 3:
 
 			html += '<div class="ordCont" id="'+ divID + '" column="column-3">'
 
-
-		counter += 1
+		if counter == 3:
+			counter = 1
+		else:
+			counter += 1
 
 		# Builds HTML
 		html += ' \
