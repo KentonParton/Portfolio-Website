@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 	if ($(window).width() > 854) {
-		
+
 	}
 
 	checkPage();
@@ -57,7 +57,7 @@ function inputTransfer(currentPage) {
 			var orderCount = output[2];
 
 			//list of each order due date
-			//changes timer times from a string into a list
+			//changes timer times from a JSON string into a list
 			var orderTimes = $.parseJSON(output[3]);
 
 			//list of order ID's
@@ -89,11 +89,9 @@ function inputTransfer(currentPage) {
 
 					// removes letters, spaces and leaves digits and hyphens
 					pointInTime = pointInTime.replace(/[^0-9\-]/g,'');
-					//console.log(pointInTime);
 
 					//gets ID of each timer
 					var timerID = '#' + $(this).attr('id');
-
 
 					//number of times executed = number of orders
 					if (iterator < orderCount) {
@@ -141,20 +139,48 @@ function inputTransfer(currentPage) {
 	});
 }
 
+function formatTime(pointInTime) {
+
+	var seenNum = false;
+	var isNegative = '';
+
+	if (pointInTime[0] === '-') {
+		pointInTime = pointInTime.substring( 1, pointInTime.length);
+		isNegative = '-';
+	}
+
+	var count = 0;
+
+	for (i = 0; i < pointInTime.length; i++) {
+
+		if (pointInTime[i] === '0') {
+			pointInTime = pointInTime.replace('0','');
+			i--;
+		} else {
+			return isNegative + pointInTime;
+		}
+	}
+}
+
 // moves order to correct column
 function moveToColumn() {
 
-	$('.ordCont').each(function (index, value){
+	// $('.ordCont').each(function (index, value){
+	//
+	// 	var columnID = $(this).attr('column');
+	//
+	// 	$(this).appendTo('#' + columnID);
+	// });
 
-		var columnID = $(this).attr('column');
-
-		$(this).appendTo('#' + columnID);
-	});
+	$('orderCont > ordCont').length;
 }
 
 
 // puts orders in correct row
-function rowSwitch(orderCount, timerID, pointInTime, currentPage){
+function rowSwitch(orderCount, timerID, pointInTime){
+
+
+	pointInTime = formatTime(pointInTime);
 
 	// order ID
 	var getOrderID = timerID.split('-');
@@ -163,54 +189,46 @@ function rowSwitch(orderCount, timerID, pointInTime, currentPage){
 	// column ID
 	var columnID = $('#' + getOrderID).attr('column');
 
-	// colors for each row
-	var colors = ['#008A91', '#9EE100', '#EFBC00', '#EF8900', '#EF2A00' ];
-	// row ID's
-	var rows = [ '#row4', '#row3', '#row2', '#row1']
-
 	//need to change this
 	// array or times as numerical value
-	var colomnRange = ['24', '12', '06', '02', '01'];
-
-	pointInTime = pointInTime.substring(0, 2);
-	console.log(pointInTime);
+	var tRange = [ 0, 20000, 60000, 120000, 240000];
+	// row ID's
+	var rows = ['#row0', '#row1', '#row2', '#row3', '#row4', '#row5']
 
 	// loops thorugh colors
-	for ( k = 0; k < colors.length; k++){
+	for ( k = 0; k < rows.length; k++){
 
 		// checks which row the order must be moved to
-		if (colomnRange[k] > pointInTime) {
+		if (parseInt(pointInTime) <= tRange[k]) {
 
-			$('#' + getOrderID).appendTo( rows[k] + ' .orderCont' + ' #' + columnID);
+			if (pointInTime[0] === '-'){
+					moveOrders(getOrderID, columnID, rows, k);
+					break;
+			}
 
-			$('#timer-' + getOrderID).css('color', '' + colors[k] + '');
-			$('#block-' + getOrderID).css('background', '' + colors[k] + '');
-			$('#digit-' + getOrderID).css('background', '' + colors[k] + '');
+			moveOrders(getOrderID, columnID, rows, k);
+			break;
+
+		} else if(parseInt(pointInTime) > tRange[tRange.length - 1]) {
+			moveOrders(getOrderID, columnID, rows, 5);
+			break;
 		}
 	}
 
-	// // if time is above 12 hours move to #row4
-	// if (colomnRange[1] < pointInTime){
-
-	// 	$('#' + getOrderID).appendTo('#row4 .orderCont' + ' #' + columnID);
-
-	// 	$('#timer-' + getOrderID).css('color', '#008A91');
-	// 	$('#block-' + getOrderID).css('background', '#008A91');
-	// 	$('#digit-' + getOrderID).css('background', '#008A91');
-	// }
-
-	// if (pointInTime[0] === '-'){
-
-	// 	$('#' + getOrderID).appendTo('#row0 .orderCont' + ' #' + columnID);
-
-	// 	$('#timer-' + getOrderID).css('color', '#EF2A00');
-	// 	$('#block-' + getOrderID).css('background', '#EF2A00');
-	// 	$('#digit-' + getOrderID).css('background', '#EF2A00');
-
-	// }
-
 	// //displays orders
 	$('.ordCont').show();
+}
+
+function moveOrders(getOrderID, columnID, rows, k) {
+
+	// colors for each row
+	var colors = ['#EF2A00', '#EF8900', '#EFBC00', '#9EE100', '#008A91', '#C11DD2'];
+
+
+	$('#' + getOrderID).appendTo( rows[k] + ' .orderCont' + ' #' + columnID);
+	$('#timer-' + getOrderID).css('color', '' + colors[k] + '');
+	$('#block-' + getOrderID).css('background', '' + colors[k] + '');
+	$('#digit-' + getOrderID).css('background', '' + colors[k] + '');
 }
 
 function showProducts() {

@@ -74,6 +74,7 @@ def buildPlaygroundSection(request):
 		['6 hrs'],
 		['12 hrs'],
 		['24 hrs'],
+		['24 hrs +'],
 	]
 
 	# Builds HTML
@@ -129,12 +130,14 @@ def GETvalues(request):
 
 	for time in check_time:
 
+
+
 		db_time = datetime.strptime(str(time[4]), '%Y-%m-%d %H:%M:%S').strftime('%Y%m%d%H%M%S')
 		current_time = datetime.now().strftime('%Y%m%d%H%M%S')
 
 		if int(db_time) - int(current_time) < 0:
 
-			new_time =  datetime.now()  + timedelta(days=1)
+			new_time =  datetime.now()  + timedelta(days=1, hours=13)
 			new_time = str(new_time.strftime('%Y-%m-%d %H:%M:%S'))
 
 			order_id = str(time[0])
