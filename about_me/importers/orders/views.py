@@ -132,7 +132,6 @@ def GETvalues(request):
 			change_order_times = True
 
 	if change_order_times:
-		print '# winning'
 
 		hour = 1
 		sec = 5
