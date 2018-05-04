@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f40e5a25-b5e1-467a-9e46-872200147539" name="Default" comment="" />
+    <list default="true" id="f40e5a25-b5e1-467a-9e46-872200147539" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/about_me/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/about_me/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,62 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="general.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/general.css">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/about_me/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about_me/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about_me/importers/orders/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
-              <caret line="149" column="20" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="importers.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/javascript/importers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mrbm.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/mrbm.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="importers.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/importers.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="997">
-              <caret line="110" column="130" selection-start-line="110" selection-start-column="121" selection-end-line="110" selection-end-column="130" />
+            <state relative-caret-position="645">
+              <caret line="45" selection-start-line="45" selection-end-line="49" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -80,8 +31,8 @@
     <findStrings>
       <find>time</find>
       <find>current</find>
-      <find>ID</find>
       <find>user-sele</find>
+      <find>ID</find>
     </findStrings>
     <replaceStrings>
       <replace>Id</replace>
@@ -101,6 +52,7 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/importers.html" />
         <option value="$PROJECT_DIR$/templates/mrbm.html" />
+        <option value="$PROJECT_DIR$/about_me/settings.py" />
       </list>
     </option>
   </component>
@@ -111,10 +63,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1895" />
+    <option name="x" value="1534" />
     <option name="y" value="27" />
-    <option name="width" value="985" />
-    <option name="height" value="968" />
+    <option name="width" value="1346" />
+    <option name="height" value="1342" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -129,6 +81,16 @@
           <expand>
             <path>
               <item name="about_me" type="b2602c69:ProjectViewProjectNode" />
+              <item name="about_me" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="about_me" type="b2602c69:ProjectViewProjectNode" />
+              <item name="about_me" type="462c0819:PsiDirectoryNode" />
+              <item name=".ebextensions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="about_me" type="b2602c69:ProjectViewProjectNode" />
+              <item name="about_me" type="462c0819:PsiDirectoryNode" />
               <item name="about_me" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -195,7 +157,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1895" y="27" width="985" height="968" extended-state="0" />
+    <frame x="1534" y="27" width="1346" height="1342" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -204,7 +167,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34252387" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24769938" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -227,13 +190,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/css/general.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/jquery/jquery.countdown.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1838">
@@ -248,6 +204,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/importers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/config.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.ebextensions/django.config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/importers.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="997">
+          <caret line="110" column="130" selection-start-line="110" selection-start-column="121" selection-end-line="110" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/general.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -271,10 +257,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/importers.html">
+    <entry file="file://$PROJECT_DIR$/static/javascript/importers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        <state relative-caret-position="345">
+          <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -285,20 +271,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/importers.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="997">
-          <caret line="110" column="130" selection-start-line="110" selection-start-column="121" selection-end-line="110" selection-end-column="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/about_me/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/importers.js">
+    <entry file="file://$PROJECT_DIR$/about_me/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+        <state relative-caret-position="645">
+          <caret line="45" selection-start-line="45" selection-end-line="49" selection-end-column="1" />
         </state>
       </provider>
     </entry>
