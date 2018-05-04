@@ -40,7 +40,7 @@ def build_main_page(request):
 						<span>Studying at:</span> \
 					</div> \
 					<div id="second" class="about_me"> \
-						<span>Information Sytems</span> \
+						<span>Information Systems</span> \
 						<span>Computer Science</span> \
 						<span id="font-1">3.7</span> \
 						<span id="font-2">Spring</span> \

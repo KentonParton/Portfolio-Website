@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-
-	if ($(window).width() > 854) {
-
-	}
-
 	checkPage();
 });
 
@@ -22,9 +17,9 @@ function checkPage() {
 function getCurrentPage() {
 
 	// Gets the URL of the current page
-	var link_url = document.URL;
+	var linkUrl = document.URL;
 	// splits on '/'
-	var temp = link_url.split('/');
+	var temp = linkUrl.split('/');
 
 	// gets the page label || need to check when live
 	var currentPage = temp[3];
@@ -60,8 +55,8 @@ function inputTransfer(currentPage) {
 			//changes timer times from a JSON string into a list
 			var orderTimes = $.parseJSON(output[3]);
 
-			//list of order ID's
-			var orderID = $.parseJSON(output[4]);
+			//list of order Id's
+			var orderId = $.parseJSON(output[4]);
 
 			// used as a 2nd iterator like i in the for loop below
 			var iterator = 0;
@@ -70,7 +65,7 @@ function inputTransfer(currentPage) {
 			for ( var i = 0; i < orderCount; i++){
 
 				// adds timer plugin
-				$('#timer-' + orderID[i]).countdown(orderTimes[i], {elapse: true})
+				$('#timer-' + orderId[i]).countdown(orderTimes[i], {elapse: true})
 
 				//code is run when timer is updated (every second)
 				.on('update.countdown', function(event) {
@@ -84,21 +79,20 @@ function inputTransfer(currentPage) {
 			      		$(this).html(event.strftime('%I:%M:%S'));
 			    	}
 
+
 					// gets the time for each order
 					var pointInTime = $(this).text();
 
 					// removes letters, spaces and leaves digits and hyphens
 					pointInTime = pointInTime.replace(/[^0-9\-]/g,'');
 
-					//gets ID of each timer
-					var timerID = '#' + $(this).attr('id');
+					//gets Id of each timer
+					var timerId = '#' + $(this).attr('id');
 
 					//number of times executed = number of orders
 					if (iterator < orderCount) {
-
 						//sets orders in correct rows on page load
-						rowSwitch(orderCount, timerID, pointInTime);
-						//moveToColumn();
+						rowSwitch(orderCount, timerId, pointInTime);
 						//increases iterator by 1
 						iterator ++;
 
@@ -106,15 +100,13 @@ function inputTransfer(currentPage) {
 					//is run to move order to correct row
 					} else {
 
-						var timeCheck = ['12:00:00', '06:00:00', '02:00:00', '- 00:00:00']
-
+						var timeCheck = ['25:00:00', '13:00:00', '07:00:00', '03:00:00', '- 00:00:00']
 						// checks of any order times are equal to the above times
-						for ( k = 0; k < timeCheck.length; k++){
-
-							if ($(timerID).text() === timeCheck[k]){
-
+						for ( k = 0; k < timeCheck.length; k++) {
+							if ($(timerId).text() === timeCheck[k]){
 								// run rowSwitch if times are equal
-								rowSwitch(orderCount, timerID, pointInTime, currentPage);
+								rowSwitch(orderCount, timerId, pointInTime);
+								break;
 							}
 						}
 					}
@@ -141,15 +133,9 @@ function inputTransfer(currentPage) {
 
 function formatTime(pointInTime) {
 
-	var seenNum = false;
-	var isNegative = '';
-
 	if (pointInTime[0] === '-') {
-		pointInTime = pointInTime.substring( 1, pointInTime.length);
-		isNegative = '-';
+		return '-0'
 	}
-
-	var count = 0;
 
 	for (i = 0; i < pointInTime.length; i++) {
 
@@ -157,60 +143,46 @@ function formatTime(pointInTime) {
 			pointInTime = pointInTime.replace('0','');
 			i--;
 		} else {
-			return isNegative + pointInTime;
+			return pointInTime;
 		}
 	}
 }
 
-// moves order to correct column
-function moveToColumn() {
-
-	// $('.ordCont').each(function (index, value){
-	//
-	// 	var columnID = $(this).attr('column');
-	//
-	// 	$(this).appendTo('#' + columnID);
-	// });
-
-	$('orderCont > ordCont').length;
-}
 
 
 // puts orders in correct row
-function rowSwitch(orderCount, timerID, pointInTime){
-
+function rowSwitch(orderCount, timerId, pointInTime){
 
 	pointInTime = formatTime(pointInTime);
 
-	// order ID
-	var getOrderID = timerID.split('-');
-	getOrderID = getOrderID[1];
+	// order Id
+	var getOrderId = timerId.split('-');
+	getOrderId = getOrderId[1];
 
-	// column ID
-	var columnID = $('#' + getOrderID).attr('column');
+	// column Id
+	var columnId = $('#' + getOrderId).attr('column');
 
 	//need to change this
 	// array or times as numerical value
-	var tRange = [ 0, 20000, 60000, 120000, 240000];
-	// row ID's
+	var tRange = [ 0, 30000, 70000, 130000, 250000];
+	// row Id's
 	var rows = ['#row0', '#row1', '#row2', '#row3', '#row4', '#row5']
 
-	// loops thorugh colors
+	// loops through rows
 	for ( k = 0; k < rows.length; k++){
 
 		// checks which row the order must be moved to
 		if (parseInt(pointInTime) <= tRange[k]) {
 
 			if (pointInTime[0] === '-'){
-					moveOrders(getOrderID, columnID, rows, k);
-					break;
+				moveOrders(getOrderId, columnId, rows, k);
+				break;
 			}
-
-			moveOrders(getOrderID, columnID, rows, k);
+			moveOrders(getOrderId, columnId, rows, k);
 			break;
 
 		} else if(parseInt(pointInTime) > tRange[tRange.length - 1]) {
-			moveOrders(getOrderID, columnID, rows, 5);
+			moveOrders(getOrderId, columnId, rows, 5);
 			break;
 		}
 	}
@@ -219,16 +191,15 @@ function rowSwitch(orderCount, timerID, pointInTime){
 	$('.ordCont').show();
 }
 
-function moveOrders(getOrderID, columnID, rows, k) {
+function moveOrders(getOrderId, columnId, rows, k) {
 
 	// colors for each row
 	var colors = ['#EF2A00', '#EF8900', '#EFBC00', '#9EE100', '#008A91', '#C11DD2'];
 
-
-	$('#' + getOrderID).appendTo( rows[k] + ' .orderCont' + ' #' + columnID);
-	$('#timer-' + getOrderID).css('color', '' + colors[k] + '');
-	$('#block-' + getOrderID).css('background', '' + colors[k] + '');
-	$('#digit-' + getOrderID).css('background', '' + colors[k] + '');
+	$('#' + getOrderId).appendTo( rows[k] + ' .orderCont' + ' #' + columnId);
+	$('#timer-' + getOrderId).css('color', '' + colors[k] + '');
+	$('#block-' + getOrderId).css('background', '' + colors[k] + '');
+	$('#digit-' + getOrderId).css('background', '' + colors[k] + '');
 }
 
 function showProducts() {
@@ -242,10 +213,10 @@ function showProducts() {
 	//binds click
 	$('.ordOverlay').bind('click', function(){
 
-		var overlayID = $(this).attr('id').split('-');
-		overlayID = overlayID[1];
+		var overlayId = $(this).attr('id').split('-');
+		overlayId = overlayId[1];
 		// checks if overlay is visiable (bool)
-		var visible = $('#' + overlayID + ' .prodDetails').is(":visible");
+		var visible = $('#' + overlayId + ' .prodDetails').is(":visible");
 
 		// hides all product information first
 		$('.promptCont').hide();
@@ -255,8 +226,8 @@ function showProducts() {
 		// toggles clicked divs product information
 		if (visible === false){
 
-			$('#' + overlayID + ' .prodDetails').toggle();
-			$('#' + overlayID + ' .triangle').toggle();
+			$('#' + overlayId + ' .prodDetails').toggle();
+			$('#' + overlayId + ' .triangle').toggle();
 
 			// KP || hide pageOverlay
 			$('.pageOverlay').show();
@@ -289,17 +260,17 @@ function displayPrompt(orderTimes){
 
 	$('.btn-complete').bind('click', function(){
 
-		//gets the ID of the "complete" button that is clicked
-		var buttonID = $(this).attr('id').split('-');
-		buttonID = buttonID[1];
-		var visible = $('#' + buttonID + ' .promptCont').is(":visible");
+		//gets the Id of the "complete" button that is clicked
+		var buttonId = $(this).attr('id').split('-');
+		buttonId = buttonId[1];
+		var visible = $('#' + buttonId + ' .promptCont').is(":visible");
 
 		$('.prodDetails').hide();
 		$('.promptCont').hide();
 
 		if (visible === false){
 
-			$('#' + buttonID + ' .promptCont').toggle();
+			$('#' + buttonId + ' .promptCont').toggle();
 
 			// KP || hide pageOverlay
 			$('.pageOverlay').show();
@@ -312,17 +283,17 @@ function displayPrompt(orderTimes){
 		}
 
 		// runs removeOrder
-		changeOrderStatus(buttonID, orderTimes);
+		changeOrderStatus(buttonId, orderTimes);
 
-		//  KP || Un-binds the pageOverlay
+		// Un-binds the pageOverlay
 		$('.pageOverlay').unbind('click');
 
-		// KP ||  Binds the pageOverlay
+		// Binds the pageOverlay
 		$('.pageOverlay').bind('click', function(){
 
 			$('.promptCont').hide();
 
-			// KP || hide pageOverlay
+			// hide pageOverlay
 			$('.pageOverlay').hide();
 		});
 	});
@@ -340,15 +311,26 @@ function getTime() {
 
 	var seconds = '00' + timeNow.getSeconds();
 
-	//displays actual time
+	// displays actual time
 	var currentTime = "Last Refreshed at: " + hours.slice(-2) + ":" + minutes.slice(-2) + ":" + seconds.slice(-2);
 
-	//removes text inside div
+	// removes text inside div
 	$('.lastRefresh').empty();
 
-	//appends new time to div
+	// appends new time to div
 	$('.lastRefresh').append(currentTime);
 
+}
+
+function refreshOnTimer() {
+
+	// will refresh the page every 5 minutes(300000)
+	setTimeout(function(){
+		removeDivs();
+   		checkPage();
+   		getTime();
+
+	}, 300000);
 }
 
 function lastRefresh() {
@@ -357,22 +339,11 @@ function lastRefresh() {
 
 	$('.refresh').bind('click', function() {
 
-		//refreshes the page
+		// refreshes the page
 		removeDivs();
    		checkPage();
 		getTime();
 	});
-}
-
-function refreshOnTimer() {
-
-	//will refresh the page every 5 minutes(300000)
-	setTimeout(function(){
-		removeDivs();
-   		checkPage();
-   		getTime();
-
-	}, 300000);
 }
 
 function removeDivs () {
@@ -382,13 +353,13 @@ function removeDivs () {
 }
 
 // user has option to remove order or not
-function changeOrderStatus(buttonID, orderTimes){
+function changeOrderStatus(buttonId, orderTimes){
 
 	$('.yes, .no').unbind('click');
 
 	$('.yes, .no').bind('click', function() {
 
-		// KP || hide pageOverlay
+		// hide pageOverlay
 		$('.pageOverlay').hide();
 
 		// class of div clicked (yes or no)
@@ -398,7 +369,7 @@ function changeOrderStatus(buttonID, orderTimes){
 		if (promptClass === 'yes'){
 
 			// gets the current time of that timer
-			var timePastDue = $('#timer-' + buttonID).text();
+			var timePastDue = $('#timer-' + buttonId).text();
 
 			// removes letters, symbols except numbers and hyphens
 			timePastDue = timePastDue.replace(/[^0-9\-]/g,'');
@@ -409,29 +380,27 @@ function changeOrderStatus(buttonID, orderTimes){
 			}
 
 			// removes the order when 'yes' is cliced
-			$('#' + buttonID).remove();
-			var removeOrderID = parseInt(buttonID);
-			changeDB(removeOrderID);
+			$('#' + buttonId).remove();
+			var removeOrderId = parseInt(buttonId);
+			changeDB(removeOrderId);
 
 		// hides prompt when 'no' is clicked
 		} else if (promptClass === 'no') {
 
-			//console.log('#prompt-' + buttonID);
-			$('#prompt-' + buttonID).hide();
+			//console.log('#prompt-' + buttonId);
+			$('#prompt-' + buttonId).hide();
 		}
 	});
 }
 
 // request to change db
-function changeDB(removeOrderID) {
-	//console.log(removeOrderID);
-
+function changeDB(removeOrderId) {
 	// AJAX Call
 	$.ajax({
 		url:'/changeDB/', //name of the function in views.py
 		type : "POST", //POST to send information to views.py, OR GET to retrieve information
 		data : {
-			removeOrderID : removeOrderID
+			removeOrderId : removeOrderId
 		},
 		complete : function(data) {
 

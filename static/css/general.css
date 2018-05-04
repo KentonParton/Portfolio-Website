@@ -47,7 +47,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 
 .landing_container .welcome_container {float: left; position: relative; width: calc(50% - 36px); height: calc(100% - 120px); margin: 70px 0 0 36px; }
 .landing_container .welcome_container .information { float: left; position: relative; width: 100%; height: auto; max-height: 250px; margin-bottom: 20px;  }
-.landing_container .welcome_container .information .about_me { float: left; position: relative; width: 105px; height: auto; margin-right: 5px;}
+.landing_container .welcome_container .information .about_me { float: left; position: relative; width: 107px; height: auto; margin-right: 5px;}
 .landing_container .welcome_container .information .about_me span { float: right; position: relative; width: auto; height: 30px; font-size: 18px; font-family: NEOTERICc-Bold; margin: 0; }
 
 
@@ -56,7 +56,7 @@ body { height: 100%; margin: 0 auto; width: 100%; background-repeat: no-repeat; 
 #info-3 {}
 
 #first span { width: 100%; font-weight: bold; color: #d0d1d3; text-align: right; }
-#second { float: left; width: calc(100% - 120px); min-width: 200px; margin-left: 5px; }
+#second { float: left; width: calc(100% - 122px); min-width: 200px; margin-left: 5px; }
 #second span { float: left; width: 100%; color: #898D90;}
 #gpa {margin-left: 15px;}
 #font-1 {font-family: 'Arial Narrow';}

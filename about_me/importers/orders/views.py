@@ -20,10 +20,6 @@ def index(request):
 
 	status = displayAdmin(request)
 
-	status = displayAdmin(request)
-
-	status = displayAdmin(request)
-
 	# Gets the playground HTML
 	playgroundHTML = buildPlaygroundSection(request)
 
@@ -112,39 +108,46 @@ def GETvalues(request):
 	if currentPage == '':
 		return HttpResponse('SUCCESS')
 
-	#connects to db
+	# connects to db
 	conn = sqlite3.connect('db.sqlite3')
 
-	sql_orders = """SELECT orders_order.id,
-			orders_order.client_id,
-			orders_client.client,
-			orders_order.order_number,
-			orders_order.due
+	sql_orders = """SELECT orders_order.id, orders_order.client_id, orders_client.client, orders_order.order_number, orders_order.due
 		FROM orders_order
 		INNER JOIN orders_client ON orders_order.client_id = orders_client.id
 		WHERE orders_order.status = ''
-		ORDER BY
-		orders_order.due ASC"""
+		ORDER BY orders_order.due ASC"""
 
-	check_time = conn.execute(sql_orders)
+	orders = conn.execute(sql_orders)
 
-	for time in check_time:
+	change_order_times = False
 
+	current_time = datetime.now().strftime('%Y%m%d%H%M%S')
 
+	for time in orders:
 
-		db_time = datetime.strptime(str(time[4]), '%Y-%m-%d %H:%M:%S').strftime('%Y%m%d%H%M%S')
-		current_time = datetime.now().strftime('%Y%m%d%H%M%S')
+		order_times = datetime.strptime(str(time[4]), '%Y-%m-%d %H:%M:%S').strftime('%Y%m%d%H%M%S')
 
-		if int(db_time) - int(current_time) < 0:
+		if (int(current_time) - int(order_times) >= 0) & (change_order_times is False):
 
-			new_time =  datetime.now()  + timedelta(days=1, hours=13)
+			change_order_times = True
+
+	if change_order_times:
+		print '# winning'
+
+		hour = 1
+		sec = 5
+		orders = conn.execute(sql_orders)
+		for time in orders:
+
+			new_time = datetime.now() + timedelta(hours=hour, seconds=5)
 			new_time = str(new_time.strftime('%Y-%m-%d %H:%M:%S'))
 
 			order_id = str(time[0])
 
-			conn.execute('''UPDATE orders_order SET due = ? WHERE id = ?''',
-				(new_time, order_id))
+			conn.execute('''UPDATE orders_order SET due = ? WHERE id = ?''', (new_time, order_id))
 
+			hour += 4
+			sec += 5
 
 	sql_products = """SELECT orders_productitem.order_number_id,
 			orders_product.name,
@@ -160,17 +163,16 @@ def GETvalues(request):
 	orders = conn.execute(sql_orders)
 	products = conn.execute(sql_products)
 
-	#will contain ID's of each order
+	# will contain ID's of each order
 	countID = []
 
-	#will contain times of each order
+	# will contain times of each order
 	times = []
 
 	# counts number of orders
 	countOrders = 0
 	static_list = []
 	product_list = []
-
 
 	for order in orders:
 
